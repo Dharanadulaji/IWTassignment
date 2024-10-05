@@ -3,7 +3,7 @@
 require_once './connection.php'; // Make sure the correct file path for the connection is used
 
 // Retrieve data from the database
-$sql = "SELECT * FROM advertise_deials";
+$sql = "SELECT * FROM advertise_details";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) { // Corrected `run_rows` to `num_rows`
@@ -14,7 +14,7 @@ if ($result->num_rows > 0) { // Corrected `run_rows` to `num_rows`
         echo "<td>" . $row["adcontent"] . "</td>"; // Fixed string concatenation
         echo "<td>" . $row["Budget"] . "</td>"; // Fixed string concatenation
         echo "<td>";
-        
+
         // Corrected incorrect concatenation in the onClick event
         echo "<button onClick=\"redirectToUpdateForm('" . $row['advertiseName'] . "')\">Update</button>";
         echo "<a href=\"delete.php?delete_advertiseName=" . $row["advertiseName"] . "\"> Delete</a>";
@@ -27,6 +27,3 @@ if ($result->num_rows > 0) { // Corrected `run_rows` to `num_rows`
 
 // Close the connection
 $conn->close();
-?>
-
-

@@ -7,13 +7,13 @@ if (isset($_GET['delete_advertiseName'])) {
     $deleteadvertiseName = $_GET['delete_advertiseName'];
 
     // Prepare the DELETE query
-    $sql = "DELETE FROM advertise_deials WHERE advertiseName = ?";
+    $sql = "DELETE FROM advertise_details WHERE advertiseName = ?";
 
     // Prepare the statement
     if ($stmt = $conn->prepare($sql)) {
         // Bind the parameter to the SQL query
         $stmt->bind_param("s", $deleteadvertiseName);
-        
+
         // Execute the query
         if ($stmt->execute()) {
             echo "<script>alert('User Account Deleted');</script>";
@@ -33,4 +33,3 @@ if (isset($_GET['delete_advertiseName'])) {
 
 // Close the connection
 $conn->close();
-?>

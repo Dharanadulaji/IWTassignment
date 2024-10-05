@@ -7,9 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $publisher = $_POST["publisher"];
     $adContent = $_POST["adContent"];
     $adBudget = $_POST["adBudget"];
-    
+
     // Insert data into the database
-    $sql = "INSERT INTO advertise_deials(advertiseName, selectpublisher, adcontent, Budget) 
+    $sql = "INSERT INTO advertise_details(advertiseName, selectpublisher, adcontent, Budget) 
             VALUES ('$advertiserName', '$publisher', '$adContent', '$adBudget')";
 
     // Check if the insert was successful
@@ -19,14 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    
+
     // Close the Connection
     $conn->close();
 }
-?>
-
- 
-
-
-
-	
